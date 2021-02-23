@@ -62,15 +62,19 @@
 				<div class="col-md-6">
 					<div class="payment-method">
 						<h2>We Accept:</h2>
-						<img src="<c:url value="/assets/client/img/payment-method.png" />" alt="Payment Method" />
+						<img src="<c:url value="/assets/client/img/payment-method.png" />"
+							alt="Payment Method" />
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="payment-security">
 						<h2>Secured By:</h2>
-						<img src="<c:url value="/assets/client/img/godaddy.svg" />" alt="Payment Security" /> <img
-							src="<c:url value="/assets/client/img/norton.svg" />" alt="Payment Security" /> <img
-							src="<c:url value="/assets/client/img/ssl.svg" />" alt="Payment Security" />
+						<img src="<c:url value="/assets/client/img/godaddy.svg" />"
+							alt="Payment Security" /> <img
+							src="<c:url value="/assets/client/img/norton.svg" />"
+							alt="Payment Security" /> <img
+							src="<c:url value="/assets/client/img/ssl.svg" />"
+							alt="Payment Security" />
 					</div>
 				</div>
 			</div>
@@ -98,4 +102,7 @@
 		</div>
 	</div>
 	<!-- Footer Bottom End -->
+
+	<!-- Back to Top -->
+	<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 </footer>
