@@ -12,7 +12,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- Bottom Bar Start -->
 	<div class="bottom-bar">
 		<div class="container-fluid">
@@ -35,9 +35,11 @@
 				<div class="col-md-3">
 					<div class="user">
 						<a href="/DataliHouse/favorites" class="btn wishlist"> <i
-							class="fa fa-heart"></i> <span>(0)</span>
+							class="fa fa-heart"></i> <span>0</span>
+						</a> <a href="/DataliHouse/cart" class="btn wishlist"> <i
+							class="fa fa-shopping-cart"></i> <span>${ TotalQuantityCart }</span>
 						</a> <a href="/DataliHouse/cart" class="btn cart"> <i
-							class="fa fa-shopping-cart"></i> <span>(0)</span>
+							class="fa fa-money-bill-wave"></i> <span>${ TotalPriceCart }</span>
 						</a>
 					</div>
 				</div>

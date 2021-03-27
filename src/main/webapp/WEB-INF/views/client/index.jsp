@@ -11,13 +11,15 @@
 					<ul class="navbar-nav">
 						<li class="nav-item"><a class="nav-link" href="/DataliHouse/"><i
 								class="fa fa-home"></i>Home</a></li>
-						<li class="nav-item"><a class="nav-link" href="/DataliHouse/best-selling"><i
+						<li class="nav-item"><a class="nav-link"
+							href="<c:url value="/best-selling" />"><i
 								class="fa fa-shopping-bag"></i>Best Selling</a></li>
-						<li class="nav-item"><a class="nav-link" href="/DataliHouse/new-arrivals"><i
+						<li class="nav-item"><a class="nav-link"
+							href="<c:url value="/new-arrivals" />"><i
 								class="fa fa-plus-square"></i>New Arrivals</a></li>
 						<c:forEach var="categoryItem" items="${categories}">
 							<li class="nav-item"><a class="nav-link"
-								href="/DataliHouse/${categoryItem.slugString}"><i
+								href="<c:url value="/${categoryItem.slugString}" />"><i
 									class="fa ${categoryItem.iconString}"></i>${categoryItem.nameString}</a></li>
 						</c:forEach>
 					</ul>
@@ -30,8 +32,8 @@
 							alt="Slider Image" />
 						<div class="header-slider-caption">
 							<p>Best Selling</p>
-							<a class="btn" href="/DataliHouse/best-selling"><i class="fa fa-shopping-cart"></i>Shop
-								Now</a>
+							<a class="btn" href="/DataliHouse/best-selling"><i
+								class="fa fa-shopping-cart"></i>Shop Now</a>
 						</div>
 					</div>
 					<div class="header-slider-item">
@@ -39,8 +41,8 @@
 							alt="Slider Image" />
 						<div class="header-slider-caption">
 							<p>New Arrivals</p>
-							<a class="btn" href="/DataliHouse/new-arrivals"><i class="fa fa-shopping-cart"></i>Shop
-								Now</a>
+							<a class="btn" href="/DataliHouse/new-arrivals"><i
+								class="fa fa-shopping-cart"></i>Shop Now</a>
 						</div>
 					</div>
 					<div class="header-slider-item">
@@ -48,8 +50,8 @@
 							alt="Slider Image" />
 						<div class="header-slider-caption">
 							<p>Electronics & Accessories</p>
-							<a class="btn" href="/DataliHouse/electronics-accessories"><i class="fa fa-shopping-cart"></i>Shop
-								Now</a>
+							<a class="btn" href="/DataliHouse/electronics-accessories"><i
+								class="fa fa-shopping-cart"></i>Shop Now</a>
 						</div>
 					</div>
 				</div>
@@ -110,28 +112,24 @@
 				<div class="feature-content">
 					<i class="fab fa-cc-mastercard"></i>
 					<h2>Secure Payment</h2>
-					<p>Lorem ipsum dolor sit amet consectetur elit</p>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6 feature-col">
 				<div class="feature-content">
 					<i class="fa fa-truck"></i>
 					<h2>Worldwide Delivery</h2>
-					<p>Lorem ipsum dolor sit amet consectetur elit</p>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6 feature-col">
 				<div class="feature-content">
 					<i class="fa fa-sync-alt"></i>
 					<h2>90 Days Return</h2>
-					<p>Lorem ipsum dolor sit amet consectetur elit</p>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6 feature-col">
 				<div class="feature-content">
 					<i class="fa fa-comments"></i>
 					<h2>24/7 Support</h2>
-					<p>Lorem ipsum dolor sit amet consectetur elit</p>
 				</div>
 			</div>
 		</div>
@@ -160,7 +158,8 @@
 				</div>
 				<div class="category-item ch-150">
 					<img src="<c:url value="/assets/client/img/category-5.jpg" />" />
-					<a class="category-name" href="/DataliHouse/electronics-accessories">
+					<a class="category-name"
+						href="/DataliHouse/electronics-accessories">
 						<p>Electronics & Accessories</p>
 					</a>
 				</div>
@@ -174,7 +173,8 @@
 				</div>
 				<div class="category-item ch-250">
 					<img src="<c:url value="/assets/client/img/category-7.jpg" />" />
-					<a class="category-name" href="/DataliHouse/electronics-accessories">
+					<a class="category-name"
+						href="/DataliHouse/electronics-accessories">
 						<p>Electronics & Accessories</p>
 					</a>
 				</div>
@@ -214,151 +214,37 @@
 			<h1>Best Selling Products</h1>
 		</div>
 		<div class="row align-items-center product-slider product-slider-4">
-			<div class="col-lg-3">
-				<div class="product-item">
-					<div class="product-title">
-						<a href="#">Product Name</a>
-						<div class="ratting">
-							<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i>
+			<c:forEach var="bestSellingItem" items="${products}">
+				<div class="col-lg-3">
+					<div class="product-item">
+						<div class="product-title">
+							<a href="<c:url value="product/${bestSellingItem.id}" />">${bestSellingItem.nameString}</a>
+							<div class="ratting">
+								<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+									class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+									class="fa fa-star"></i>
+							</div>
 						</div>
-					</div>
-					<div class="product-image">
-						<a href="product-detail.html"> <img
-							src="<c:url value="/assets/client/img/product-1.jpg" />"
-							alt="Product Image">
-						</a>
-						<div class="product-action">
-							<a href="#"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
-								class="fa fa-heart"></i></a> <a href="#"><i class="fa fa-search"></i></a>
+						<div class="product-image">
+							<a href="product-detail.html"> <img
+								src="<c:url value="${bestSellingItem.imgString}" />"
+								alt="Product Image">
+							</a>
+							<div class="product-action">
+								<a href="#"><i class="fa fa-heart"></i></a>
+							</div>
 						</div>
-					</div>
-					<div class="product-price">
-						<h3>
-							<span>$</span>99
-						</h3>
-						<a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy
-							Now</a>
+						<div class="product-price">
+							<h3>
+								<span>$</span>${bestSellingItem.price}
+							</h3>
+							<a class="btn"
+								href="<c:url value="/add-cart/${bestSellingItem.id}" />"><i
+								class="fa fa-shopping-cart"></i>Add to Cart</a>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="col-lg-3">
-				<div class="product-item">
-					<div class="product-title">
-						<a href="#">Product Name</a>
-						<div class="ratting">
-							<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i>
-						</div>
-					</div>
-					<div class="product-image">
-						<a href="product-detail.html"> <img
-							src="<c:url value="/assets/client/img/product-2.jpg" />"
-							alt="Product Image">
-						</a>
-						<div class="product-action">
-							<a href="#"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
-								class="fa fa-heart"></i></a> <a href="#"><i class="fa fa-search"></i></a>
-						</div>
-					</div>
-					<div class="product-price">
-						<h3>
-							<span>$</span>99
-						</h3>
-						<a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy
-							Now</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3">
-				<div class="product-item">
-					<div class="product-title">
-						<a href="#">Product Name</a>
-						<div class="ratting">
-							<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i>
-						</div>
-					</div>
-					<div class="product-image">
-						<a href="product-detail.html"> <img
-							src="<c:url value="/assets/client/img/product-3.jpg" />"
-							alt="Product Image">
-						</a>
-						<div class="product-action">
-							<a href="#"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
-								class="fa fa-heart"></i></a> <a href="#"><i class="fa fa-search"></i></a>
-						</div>
-					</div>
-					<div class="product-price">
-						<h3>
-							<span>$</span>99
-						</h3>
-						<a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy
-							Now</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3">
-				<div class="product-item">
-					<div class="product-title">
-						<a href="#">Product Name</a>
-						<div class="ratting">
-							<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i>
-						</div>
-					</div>
-					<div class="product-image">
-						<a href="product-detail.html"> <img
-							src="<c:url value="/assets/client/img/product-4.jpg" />"
-							alt="Product Image">
-						</a>
-						<div class="product-action">
-							<a href="#"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
-								class="fa fa-heart"></i></a> <a href="#"><i class="fa fa-search"></i></a>
-						</div>
-					</div>
-					<div class="product-price">
-						<h3>
-							<span>$</span>99
-						</h3>
-						<a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy
-							Now</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3">
-				<div class="product-item">
-					<div class="product-title">
-						<a href="#">Product Name</a>
-						<div class="ratting">
-							<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i>
-						</div>
-					</div>
-					<div class="product-image">
-						<a href="product-detail.html"> <img
-							src="<c:url value="/assets/client/img/product-5.jpg" />"
-							alt="Product Image">
-						</a>
-						<div class="product-action">
-							<a href="#"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
-								class="fa fa-heart"></i></a> <a href="#"><i class="fa fa-search"></i></a>
-						</div>
-					</div>
-					<div class="product-price">
-						<h3>
-							<span>$</span>99
-						</h3>
-						<a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy
-							Now</a>
-					</div>
-				</div>
-			</div>
+			</c:forEach>
 		</div>
 	</div>
 </div>
@@ -389,151 +275,37 @@
 			<h1>New Arrivals Products</h1>
 		</div>
 		<div class="row align-items-center product-slider product-slider-4">
-			<div class="col-lg-3">
-				<div class="product-item">
-					<div class="product-title">
-						<a href="#">Product Name</a>
-						<div class="ratting">
-							<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i>
+			<c:forEach var="newArrivalProduct" items="${products}">
+				<div class="col-lg-3">
+					<div class="product-item">
+						<div class="product-title">
+							<a href="<c:url value="product/${newArrivalProduct.id}" />">${newArrivalProduct.nameString}</a>
+							<div class="ratting">
+								<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+									class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+									class="fa fa-star"></i>
+							</div>
 						</div>
-					</div>
-					<div class="product-image">
-						<a href="product-detail.html"> <img
-							src="<c:url value="/assets/client/img/product-6.jpg" />"
-							alt="Product Image">
-						</a>
-						<div class="product-action">
-							<a href="#"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
-								class="fa fa-heart"></i></a> <a href="#"><i class="fa fa-search"></i></a>
+						<div class="product-image">
+							<a href="product-detail.html"> <img
+								src="<c:url value="${newArrivalProduct.imgString}" />"
+								alt="Product Image">
+							</a>
+							<div class="product-action">
+								<a href="#"><i class="fa fa-heart"></i></a>
+							</div>
 						</div>
-					</div>
-					<div class="product-price">
-						<h3>
-							<span>$</span>99
-						</h3>
-						<a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy
-							Now</a>
+						<div class="product-price">
+							<h3>
+								<span>$</span>${newArrivalProduct.price}
+							</h3>
+							<a class="btn"
+								href="<c:url value="/add-cart/${newArrivalProduct.id}" />"><i
+								class="fa fa-shopping-cart"></i>Add to Cart</a>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="col-lg-3">
-				<div class="product-item">
-					<div class="product-title">
-						<a href="#">Product Name</a>
-						<div class="ratting">
-							<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i>
-						</div>
-					</div>
-					<div class="product-image">
-						<a href="product-detail.html"> <img
-							src="<c:url value="/assets/client/img/product-7.jpg" />"
-							alt="Product Image">
-						</a>
-						<div class="product-action">
-							<a href="#"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
-								class="fa fa-heart"></i></a> <a href="#"><i class="fa fa-search"></i></a>
-						</div>
-					</div>
-					<div class="product-price">
-						<h3>
-							<span>$</span>99
-						</h3>
-						<a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy
-							Now</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3">
-				<div class="product-item">
-					<div class="product-title">
-						<a href="#">Product Name</a>
-						<div class="ratting">
-							<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i>
-						</div>
-					</div>
-					<div class="product-image">
-						<a href="product-detail.html"> <img
-							src="<c:url value="/assets/client/img/product-8.jpg" />"
-							alt="Product Image">
-						</a>
-						<div class="product-action">
-							<a href="#"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
-								class="fa fa-heart"></i></a> <a href="#"><i class="fa fa-search"></i></a>
-						</div>
-					</div>
-					<div class="product-price">
-						<h3>
-							<span>$</span>99
-						</h3>
-						<a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy
-							Now</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3">
-				<div class="product-item">
-					<div class="product-title">
-						<a href="#">Product Name</a>
-						<div class="ratting">
-							<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i>
-						</div>
-					</div>
-					<div class="product-image">
-						<a href="product-detail.html"> <img
-							src="<c:url value="/assets/client/img/product-9.jpg" />"
-							alt="Product Image">
-						</a>
-						<div class="product-action">
-							<a href="#"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
-								class="fa fa-heart"></i></a> <a href="#"><i class="fa fa-search"></i></a>
-						</div>
-					</div>
-					<div class="product-price">
-						<h3>
-							<span>$</span>99
-						</h3>
-						<a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy
-							Now</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3">
-				<div class="product-item">
-					<div class="product-title">
-						<a href="#">Product Name</a>
-						<div class="ratting">
-							<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-								class="fa fa-star"></i>
-						</div>
-					</div>
-					<div class="product-image">
-						<a href="product-detail.html"> <img
-							src="<c:url value="/assets/client/img/product-10.jpg" />"
-							alt="Product Image">
-						</a>
-						<div class="product-action">
-							<a href="#"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
-								class="fa fa-heart"></i></a> <a href="#"><i class="fa fa-search"></i></a>
-						</div>
-					</div>
-					<div class="product-price">
-						<h3>
-							<span>$</span>99
-						</h3>
-						<a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy
-							Now</a>
-					</div>
-				</div>
-			</div>
+			</c:forEach>
 		</div>
 	</div>
 </div>
