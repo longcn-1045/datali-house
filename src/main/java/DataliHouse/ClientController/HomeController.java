@@ -9,22 +9,12 @@ import DataliHouse.Dao.CategoriesDao;
 import DataliHouse.Service.Client.HomeServiceImpl;
 
 @Controller
-public class HomeController {
-	@Autowired
-	HomeServiceImpl homeService;
-	
+public class HomeController extends BaseController {
 	@RequestMapping(value = {"/", "/client"})
 	public ModelAndView Index() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("client/index");
-		mv.addObject("categories", homeService.GetDataCategories());
-		return mv;
-	}
-	
-	@RequestMapping(value = {"/products"})
-	public ModelAndView Products() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("client/products");
-		return mv;
+		_mv.setViewName("client/index");
+		_mv.addObject("categories", homeService.GetDataCategories());
+		_mv.addObject("products", homeService.GetDataProductsDtos());
+		return _mv;
 	}
 }
