@@ -37,7 +37,7 @@
 						<a href="/DataliHouse/favorites" class="btn wishlist"> <i
 							class="fa fa-heart"></i> <span>0</span>
 						</a> <a href="/DataliHouse/cart" class="btn wishlist"> <i
-							class="fa fa-shopping-cart"></i> <span>${ TotalQuantityCart }</span>
+							class="fa fa-shopping-cart"></i> <span>${ Cart.size() }</span>
 						</a> <a href="/DataliHouse/cart" class="btn cart"> <i
 							class="fa fa-money-bill-wave"></i> <span>${ TotalPriceCart }</span>
 						</a>

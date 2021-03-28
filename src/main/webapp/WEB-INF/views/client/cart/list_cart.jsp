@@ -83,17 +83,14 @@
 								<div class="cart-content">
 									<h1>Cart Summary</h1>
 									<p>
-										Sub Total<span>$99</span>
-									</p>
-									<p>
-										Shipping Cost<span>$1</span>
+										Sub Total<span>$${ TotalPriceCart }</span>
 									</p>
 									<h2>
-										Grand Total<span>$100</span>
+										Grand Total<span>$${ TotalPriceCart }</span>
 									</h2>
 								</div>
 								<div class="cart-btn">
-									<a href="<c:url value="#" />">Checkout</a>
+									<a href="<c:url value="/checkout" />">Checkout</a>
 								</div>
 							</div>
 						</div>

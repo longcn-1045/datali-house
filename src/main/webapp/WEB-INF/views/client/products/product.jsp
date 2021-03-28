@@ -49,18 +49,6 @@
 										<h4>Price:</h4>
 										<p>$${product.price}</p>
 									</div>
-									<div class="quantity">
-										<h4>Quantity:</h4>
-										<div class="qty">
-											<button class="btn-minus">
-												<i class="fa fa-minus"></i>
-											</button>
-											<input type="text" value="1">
-											<button class="btn-plus">
-												<i class="fa fa-plus"></i>
-											</button>
-										</div>
-									</div>
 									<div class="p-size">
 										<h4>Size:</h4>
 										<div class="btn-group btn-group-sm">
@@ -166,8 +154,9 @@
 										<h3>
 											<span>$</span>${relatedProductsItem.price}
 										</h3>
-										<a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy
-											Now</a>
+										<a class="btn"
+											href="<c:url value="/add-cart/${relatedProductsItem.id}" />"><i
+											class="fa fa-shopping-cart"></i>Add to Cart</a>
 									</div>
 								</div>
 							</div>
@@ -217,33 +206,13 @@
 									<h3>
 										<span>$</span>${relatedProductsItem.price}
 									</h3>
-									<a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy
-										Now</a>
+									<a class="btn"
+										href="<c:url value="/add-cart/${relatedProductsItem.id}" />"><i
+										class="fa fa-shopping-cart"></i>Add to Cart</a>
 								</div>
 							</div>
 						</c:forEach>
 					</div>
-				</div>
-
-				<div class="sidebar-widget brands">
-					<h2 class="title">Our Brands</h2>
-					<ul>
-						<li><a href="#">Nulla </a><span>(45)</span></li>
-						<li><a href="#">Curabitur </a><span>(34)</span></li>
-						<li><a href="#">Nunc </a><span>(67)</span></li>
-						<li><a href="#">Ullamcorper</a><span>(74)</span></li>
-						<li><a href="#">Fusce </a><span>(89)</span></li>
-						<li><a href="#">Sagittis</a><span>(28)</span></li>
-					</ul>
-				</div>
-
-				<div class="sidebar-widget tag">
-					<h2 class="title">Tags Cloud</h2>
-					<a href="#">Lorem ipsum</a> <a href="#">Vivamus</a> <a href="#">Phasellus</a>
-					<a href="#">pulvinar</a> <a href="#">Curabitur</a> <a href="#">Fusce</a>
-					<a href="#">Sem quis</a> <a href="#">Mollis metus</a> <a href="#">Sit
-						amet</a> <a href="#">Vel posuere</a> <a href="#">orci luctus</a> <a
-						href="#">Nam lorem</a>
 				</div>
 			</div>
 			<!-- Side Bar End -->

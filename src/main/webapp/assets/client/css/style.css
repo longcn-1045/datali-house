@@ -1614,19 +1614,6 @@ h2 {
     background: #000000;
 }
 
-.cart-page .cart-summary .cart-btn a:first-child {
-    margin-right: 25px;
-    color: #FF6F61;
-    background: #ffffff;
-    border: 1px solid #FF6F61;
-}
-
-.cart-page .cart-summary .cart-btn a:first-child:hover {
-    color: #ffffff;
-    background: #FF6F61;
-}
-
-
 /**********************************/
 /********** Wishlist CSS **********/
 /**********************************/
